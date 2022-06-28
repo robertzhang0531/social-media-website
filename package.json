@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node db.js",
     "watch": "nodemon db --ignore frontend-js --ignore public/ & webpack --watch",
-    "start": "node db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +14,7 @@
   "dependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "@sendgrid/mail": "^7.6.0",
+    "@sendgrid/mail": "^7.7.0",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.5",
     "bcryptjs": "^2.4.3",
