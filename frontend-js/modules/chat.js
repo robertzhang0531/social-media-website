@@ -4,6 +4,8 @@ export default class Chat {
     constructor() {
         this.openedYet = false
         this.chatWrapper = document.querySelector("#chat-wrapper")
+        this.chatWrapper.classList.add("chat--visible")
+        this.openConnection()
         this.openIcon = document.querySelector(".header-chat-icon")
         this.injectHTML()
         this.chatLog = document.querySelector("#chat")
@@ -82,7 +84,6 @@ export default class Chat {
         this.chatWrapper.innerHTML = `
         <div class="chat-title-bar">Chat <span class="chat-title-bar-close"><i class="fas fa-times-circle"></i></span></div>
         <div id="chat" class="chat-log"></div>
-
         <form id="chatForm" class="chat-form border-top">
             <input type="text" class="chat-field" id="chatField" placeholder="Type a message…" autocomplete="off">
         </form>
