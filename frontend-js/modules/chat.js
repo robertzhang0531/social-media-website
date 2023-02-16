@@ -1,18 +1,22 @@
 import DOMPurify from 'dompurify'
+let chatInitialized = false;
 
 export default class Chat {
     constructor() {
-        this.openedYet = false
-        this.chatWrapper = document.querySelector("#chat-wrapper")
-        this.chatWrapper.classList.add("chat--visible")
-        this.openConnection()
-        this.openIcon = document.querySelector(".header-chat-icon")
-        this.injectHTML()
-        this.chatLog = document.querySelector("#chat")
-        this.chatField = document.querySelector("#chatField")
-        this.chatForm = document.querySelector("#chatForm")
-        this.closeIcon = document.querySelector(".chat-title-bar-close")
-        this.events()
+        if (!chatInitialized) {
+            chatInitialized = true;
+            this.openedYet = false
+            this.chatWrapper = document.querySelector("#chat-wrapper")
+            this.chatWrapper.classList.add("chat--visible")
+            this.openConnection()
+            this.openIcon = document.querySelector(".header-chat-icon")
+            this.injectHTML()
+            this.chatLog = document.querySelector("#chat")
+            this.chatField = document.querySelector("#chatField")
+            this.chatForm = document.querySelector("#chatForm")
+            this.closeIcon = document.querySelector(".chat-title-bar-close")
+            this.events()
+        }
     }
 
     // Events
@@ -48,9 +52,6 @@ export default class Chat {
     }
 
     showChat() {
-        if (!this.openedYet) {
-            this.openConnection()
-        }
         this.openedYet = true
         this.chatWrapper.classList.add("chat--visible")
         this.chatField.focus()
